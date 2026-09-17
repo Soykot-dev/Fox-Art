@@ -41,7 +41,7 @@ const Shirt = ({ shirt }) => {
             </div>
 
             {/* Product Info */}
-            <div className="p-4 bg-[#E8D9BB]">
+            <div className="p-4">
 
                 {/* Category */}
                 <p className="mb-1 text-xs font-medium uppercase tracking-wider opacity-50">
