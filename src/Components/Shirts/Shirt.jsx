@@ -13,7 +13,7 @@ const Shirt = ({ shirt }) => {
     } = shirt;
 
     return (
-        <div className="group border relative overflow-hidden rounded-2xl bg-base-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <div className="group border-[1.5px] relative overflow-hidden rounded-xl bg-base-100 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl">
 
             {/* Product Image */}
             <div className="relative overflow-hidden">
@@ -41,7 +41,7 @@ const Shirt = ({ shirt }) => {
             </div>
 
             {/* Product Info */}
-            <div className="p-4">
+            <div className="p-3">
 
                 {/* Category */}
                 <p className="mb-1 text-xs font-medium uppercase tracking-wider opacity-50">
@@ -49,7 +49,7 @@ const Shirt = ({ shirt }) => {
                 </p>
 
                 {/* Name */}
-                <h3 className="truncate text-lg font-semibold">
+                <h3 className="truncate text-2xl text-[#DF551C] font-medium transition-colors duration-500 group-hover:text-green-900">
                     {name}
                 </h3>
 
@@ -71,7 +71,7 @@ const Shirt = ({ shirt }) => {
                 </div>
 
                 {/* Price + Cart */}
-                <div className="mt-4 flex items-center justify-between gap-3">
+                <div className="flex items-center justify-between gap-3">
 
                     <div className="flex items-center gap-2">
                         <span className="text-xl font-bold">
@@ -85,10 +85,7 @@ const Shirt = ({ shirt }) => {
                         )}
                     </div>
 
-                    <button className="btn btn-neutral btn-sm gap-2 rounded-xl px-4">
-                        <ShoppingBag size={16} />
-                        Add to Cart
-                    </button>
+                    <button className="btn btn-neutral hover:bg-green-900 btn-sm gap-2 rounded-[7px] px-4"> <ShoppingBag size={16} /> Add to Cart </button>
 
                 </div>
             </div>

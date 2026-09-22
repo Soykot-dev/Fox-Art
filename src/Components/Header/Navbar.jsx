@@ -25,7 +25,7 @@ const Navbar = () => {
         </>
     );
     return (
-        <div className="navbar bg-base-100 shadow-sm px-4 lg:px-8">
+        <div className="navbar bg-base-100 shadow-sm px-4 lg:px-8 border">
 
             {/* Left - Logo + Mobile Menu */}
             <div className="navbar-start">
@@ -35,7 +35,7 @@ const Navbar = () => {
                     <div
                         tabIndex={0}
                         role="button"
-                        className="btn btn-ghost lg:hidden"
+                        className="mx-1 lg:hidden"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -64,9 +64,9 @@ const Navbar = () => {
                 {/* Logo */}
                 <Link
                     to="/"
-                    className="btn btn-ghost text-2xl font-bold tracking-tight"
+                    className=""
                 >
-                    FOX<span className="text-primary">ART</span>
+                    <img className="w-16" src="../../../public/FoxArt.png" alt="" />
                 </Link>
             </div>
 
