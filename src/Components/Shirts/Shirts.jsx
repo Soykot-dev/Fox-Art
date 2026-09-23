@@ -17,13 +17,34 @@ const Shirts = ({ data }) => {
     const handlePageChange = (page) => {
         setCurrentPage(page);
         window.scrollTo({
-            top: 100,
+            top: 450,
             behavior: "smooth",
         });
     };
 
     return (
         <>
+            <div className="mt-12 mb-6 text-center">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] opacity-50">
+                    Explore Our Collection
+                </p>
+
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                    Featured T-Shirts
+                </h2>
+
+                <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-base-content"></div>
+
+                <p className="mx-auto mt-4 max-w-xl text-sm leading-6 opacity-60">
+                    Discover our latest collection of premium designs made for
+                    your everyday style.
+                </p>
+            </div>
+
+            {/* Cards */}
+            <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {/* cards */}
+            </div>
             {/* Products */}
             <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentProducts.map((shirt) => (
@@ -51,11 +72,10 @@ const Shirts = ({ data }) => {
                             <button
                                 key={page}
                                 onClick={() => handlePageChange(page)}
-                                className={`join-item btn ${
-                                    currentPage === page
+                                className={`join-item btn ${currentPage === page
                                         ? "btn-neutral"
                                         : ""
-                                }`}
+                                    }`}
                             >
                                 {page}
                             </button>
