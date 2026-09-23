@@ -8,7 +8,7 @@ import {
     ShoppingBag,
     Star,
 } from "lucide-react";
-import { handleAddToWhiteList } from "../../Utility/HandleAddToWhiteList";
+import { handleAddToCart, handleAddToWhiteList } from "../../Utility/handleLocalStorage";
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -209,7 +209,7 @@ const ProductDetails = () => {
                         </div>
 
                         {/* Add Cart */}
-                        <button className="btn btn-neutral h-12 flex-1 rounded-xl">
+                        <button onClick={() => handleAddToCart(id)} className="btn btn-neutral h-12 flex-1 rounded-xl">
                             <ShoppingBag size={18} />
                             Add to Cart
                         </button>

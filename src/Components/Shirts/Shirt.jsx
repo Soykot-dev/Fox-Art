@@ -1,7 +1,7 @@
 import { Heart, ShoppingBag, Star } from "lucide-react";
 import { Link } from "react-router";
 import { CardBody, CardContainer, CardItem } from "../UI/3d-card";
-import { handleAddToWhiteList } from "../../Utility/HandleAddToWhiteList";
+import { handleAddToCart, handleAddToWhiteList } from "../../Utility/handleLocalStorage";
 
 
 const Shirt = ({ shirt }) => {
@@ -24,6 +24,7 @@ const Shirt = ({ shirt }) => {
     };
 
     const handleCart = (e) => {
+        handleAddToCart(id);
         e.preventDefault();
         e.stopPropagation();
     };
