@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router";
+import { Link, useLoaderData, useParams } from "react-router";
 import {
     ArrowLeft,
     Heart,
@@ -8,12 +8,11 @@ import {
     ShoppingBag,
     Star,
 } from "lucide-react";
-
-// import products from "../../data/products.json";
+import { handleAddToWhiteList } from "../../Utility/HandleAddToWhiteList";
 
 const ProductDetails = () => {
     const { id } = useParams();
-
+    const products = useLoaderData();
     const product = products.find((item) => item.id === Number(id));
 
     const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0]);
@@ -146,11 +145,10 @@ const ProductDetails = () => {
                                 <button
                                     key={color}
                                     onClick={() => setSelectedColor(color)}
-                                    className={`rounded-full border px-4 py-2 text-sm transition ${
-                                        selectedColor === color
-                                            ? "border-base-content bg-base-content text-base-100"
-                                            : "border-base-300 hover:border-base-content"
-                                    }`}
+                                    className={`rounded-full border px-4 py-2 text-sm transition ${selectedColor === color
+                                        ? "border-base-content bg-base-content text-base-100"
+                                        : "border-base-300 hover:border-base-content"
+                                        }`}
                                 >
                                     {color}
                                 </button>
@@ -173,11 +171,10 @@ const ProductDetails = () => {
                                 <button
                                     key={size}
                                     onClick={() => setSelectedSize(size)}
-                                    className={`min-w-12 rounded-lg border px-4 py-2 text-sm font-medium transition ${
-                                        selectedSize === size
-                                            ? "border-base-content bg-base-content text-base-100"
-                                            : "border-base-300 hover:border-base-content"
-                                    }`}
+                                    className={`min-w-12 rounded-lg border px-4 py-2 text-sm font-medium transition ${selectedSize === size
+                                        ? "border-base-content bg-base-content text-base-100"
+                                        : "border-base-300 hover:border-base-content"
+                                        }`}
                                 >
                                     {size}
                                 </button>
@@ -219,6 +216,7 @@ const ProductDetails = () => {
 
                         {/* Wishlist */}
                         <button
+                            onClick={() => handleAddToWhiteList(id)}
                             className="btn btn-outline btn-square h-12 w-12 rounded-xl"
                             aria-label="Add to wishlist"
                         >
@@ -286,4 +284,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-```

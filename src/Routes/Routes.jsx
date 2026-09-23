@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Root from "../pages/Root/Root";
 import Error from "../pages/Error/Error";
 import Home from "../pages/Home/Home";
-// import ProductDetails from "../Components/Shirts/ProductDetails";
+import ProductDetails from "../Components/Shirts/ProductDetails";
 
 export const router = createBrowserRouter([
     {
@@ -12,14 +12,15 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                loader: () => fetch("t-shirt-data.json"),
+                loader: () => fetch("/t-shirt-data.json"),
                 path: "/",
                 Component: Home
             },
-            // {
-            //     path: "/ProductDetails/:id",
-            //     Component: ProductDetails
-            // }
+            {
+                path: "/ProductDetails/:id",
+                loader: () => fetch("/t-shirt-data.json"),
+                Component: ProductDetails
+            }
         ]
     },
 ]);
